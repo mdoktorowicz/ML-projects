@@ -30,11 +30,11 @@ regr = LinearRegression().fit(features, target)
 fitted_vals = regr.predict(features)
 
 mse = mean_squared_error(target, fitted_vals)
-# print(f"MSE is: {round(mse, 3)}")
+print(f"MSE is: {round(mse, 3)}")
+
 RMSE = np.sqrt(mse)
 RMSE
-# print(f"RMSE is: {round(np.sqrt(mse), 3)}")
-# omitted_normal_rsquared = round(results.rsquared, 3)
+print(f"RMSE is: {round(np.sqrt(mse), 3)}")
 
 # Inflation multiplier = median home price today / median home price in dataset year
 inflation_multiplier = 666/np.median(boston_dataset.target)
@@ -88,3 +88,5 @@ def get_log_estimate(nr_rooms, students_per_classroom, next_to_river=False, high
     print(
         f'{int((estimate - lower_bound) * 1000)} USD at the low end, {int((estimate - upper_bound) * 1000)} USD at the high end')
 
+
+get_log_estimate(nr_rooms=1, students_per_classroom=20, next_to_river=False, high_confidence=True)
